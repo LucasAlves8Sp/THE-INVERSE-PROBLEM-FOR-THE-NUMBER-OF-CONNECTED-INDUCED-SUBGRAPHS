@@ -5,6 +5,14 @@
 Paper, Lean 4 formalization, programs and data. Version **1.0** (see `VERSION`; checksums in
 `MANIFEST.txt`).
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23889801.svg)](https://doi.org/10.5281/zenodo.23889801)
+
+| Where | Identifier |
+|---|---|
+| Zenodo (archive of this repository) | [10.5281/zenodo.23889801](https://doi.org/10.5281/zenodo.23889801) (all versions); [10.5281/zenodo.23889802](https://doi.org/10.5281/zenodo.23889802) (version 1.0) |
+| aiXiv | [aiXiv:2611.00156](https://aixiv.online/abs/2611.00156) |
+| Hexagon | hexagon:2611.00029 (submitted 2 November 2026, in moderation) |
+
 ## Abstract
 
 For a finite graph $G$, let $c(G)$ be the number of nonempty vertex sets that induce a connected
@@ -142,8 +150,7 @@ No independent expert has yet verified the proofs. See [`AI_DISCLOSURE.md`](AI_D
 See [`CITATION.cff`](CITATION.cff).
 
 > L. Alves de Almeida, *The inverse problem for the number of connected induced subgraphs*,
-> preprint, version 1.0, 2026,
-> https://github.com/LucasAlves8Sp/THE-INVERSE-PROBLEM-FOR-THE-NUMBER-OF-CONNECTED-INDUCED-SUBGRAPHS
+> preprint, version 1.0, 2026, aiXiv:2611.00156, https://doi.org/10.5281/zenodo.23889801
 
 ## Status
 

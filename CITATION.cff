@@ -9,6 +9,17 @@ authors:
     email: "lucasderiva8x@gmail.com"
 date-released: 2026-11-02
 version: "1.0"
+doi: 10.5281/zenodo.23889801
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23889801
+    description: "Zenodo archive of the repository, all versions"
+  - type: doi
+    value: 10.5281/zenodo.23889802
+    description: "Zenodo archive of version 1.0"
+  - type: url
+    value: "https://aixiv.online/abs/2611.00156"
+    description: "aiXiv:2611.00156"
 license: CC-BY-4.0
 repository-code: "https://github.com/LucasAlves8Sp/THE-INVERSE-PROBLEM-FOR-THE-NUMBER-OF-CONNECTED-INDUCED-SUBGRAPHS"
 abstract: >-
