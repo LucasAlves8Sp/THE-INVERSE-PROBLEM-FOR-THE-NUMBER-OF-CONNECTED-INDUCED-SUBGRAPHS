@@ -1,0 +1,65 @@
+ConnectedSets: record of the checks (Lean 4.35.0, Mathlib 6015dbbfc399f4548bafd46f9560ff61595fd328)
+
+Source: 20 modules, 4623 lines of Lean (with the root file ConnectedSets.lean); no sorry, no axiom
+declarations, no native_decide
+  (grep -E "sorry|^axiom |admit|native_decide|ofReduceBool" ConnectedSets/*.lean ConnectedSets.lean: 0 matches)
+Eleven modules (Basic, Defs, Rules, Transport, Checker, Five, Sporadic, Base, Intervals, Induction,
+Main; 2201 lines) are copied from the companion formalization (directory lean of
+https://github.com/LucasAlves8Sp/ALL-FINITE-CARDINALITIES-OF-THE-HYPERSPACE-OF-REGULAR-SUBCONTINUA,
+commit 2751bf0, library FiniteCard), with the namespace renamed to ConnectedSets and the comments
+renumbered. The other nine are new.
+
+1. lake build
+   Build completed successfully (1328 jobs), from an empty build directory (about 4 minutes; the kernel
+   checks in Five.lean and Extras.lean take about 1.5 and 2 minutes).
+   A copy of the sources in a fresh directory also builds, and CheckAxioms.lean gives the same output there.
+
+2. lake env lean CheckAxioms.lean   (31 results, one for each statement of ConnectedSets/Paper.lean)
+   'ConnectedSets.Paper.theorem_1_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.theorem_1_1_type' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.theorem_1_2' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.theorem_1_2_minOrder' does not depend on any axioms
+   'ConnectedSets.Paper.theorem_1_3' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.theorem_1_3_sharp' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.section_1_formulas' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.lemma_2_1_a' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.lemma_2_1_b' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.lemma_2_1_c' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.lemma_2_1_d' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.lemma_2_1_e' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.lemma_2_1_f' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.lemma_3_1_a' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.lemma_3_1_b' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.proposition_3_2' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.proposition_3_2_spider' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.corollary_3_3' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.proposition_3_4' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.corollary_3_5' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.lemma_4_2' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.lemma_4_3' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.lemma_4_4_a' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.lemma_4_4_b' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.remark_4_5' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.theorem_4_6' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.example_4_7' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.proposition_6_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.lemma_7_2_a' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.lemma_7_2_b' depends on axioms: [propext, Classical.choice, Quot.sound]
+   'ConnectedSets.Paper.lemma_7_2_c' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+3. lake env leanchecker <the 19 modules ConnectedSets.*>   (replays the declarations of every module)
+   exit code 0 (211 s)
+
+4. lake env leanchecker --fresh ConnectedSets.Paper   (replays the whole import closure from scratch,
+   including Lean core and the Mathlib dependencies; Paper imports every other module)
+   exit code 0 (505 s)
+
+5. lake env leanexport ConnectedSets.Paper -- <the 31 statements of Paper.lean> > export.ndjson   (51 MB)
+   nanoda_bin with permitted_axioms = [propext, Classical.choice, Quot.sound],
+   unpermitted_axiom_hard_error = true, nat and string extensions on:
+   "Checked 10538 declarations with no typechecker errors"
+   (it also reports one pretty-printer message, "Unable to print axioms", which concerns printing only).
+
+6. From the repository root, python3 lean/gen/gen_base.py and
+   python3 lean/gen/gen_intervals.py regenerate ConnectedSets/Sporadic.lean, Base.lean and
+   Intervals.lean byte for byte from code/construct.py and data/base_certificate.txt.

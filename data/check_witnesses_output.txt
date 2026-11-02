@@ -1,0 +1,1 @@
+rows checked: 111; values: 17..127; complete range: True; mismatches: 0

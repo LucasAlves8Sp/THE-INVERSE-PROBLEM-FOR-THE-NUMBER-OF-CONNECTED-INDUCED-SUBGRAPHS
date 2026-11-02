@@ -1,0 +1,16 @@
+# Lean build output
+lean/.lake/
+
+# compiled programs, generated inputs and Python caches
+code/f_edge_subsets
+code/atlas_connected_le7.txt
+code/__pycache__/
+
+# LaTeX build files
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.toc

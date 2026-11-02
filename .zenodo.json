@@ -1,0 +1,34 @@
+{
+  "title": "The inverse problem for the number of connected induced subgraphs",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "description": "<p>For a finite graph <i>G</i>, let <i>c</i>(<i>G</i>) be the number of nonempty vertex sets that induce a connected subgraph. We show that a positive integer <i>k</i> equals <i>c</i>(<i>G</i>) for some finite connected graph <i>G</i> if and only if <i>k</i> ∉ {2, 4, 5, 8, 9, 16}. Every attainable value <i>k</i> ≠ 25 is attained on ⌊log<sub>2</sub> <i>k</i>⌋ + 1 vertices, the least possible number, and 25 needs six vertices. More precisely, for every <i>m</i> ≥ 6 each integer from 2<sup><i>m</i>−1</sup> to 2<sup><i>m</i></sup> − 1 is the value of <i>c</i> on a connected graph with exactly <i>m</i> vertices. The proofs of these results are short and use no computer; computer calculations serve only as independent checks, and for two auxiliary results: the values on six to eight vertices, and the result on all connected subgraphs described below. The value 16 falls into a gap above the path: a connected graph on <i>n</i> ≥ 4 vertices other than the path <i>P<sub>n</sub></i> has at least <i>n</i> − 3 more connected sets than <i>P<sub>n</sub></i>. The values <i>k</i> ≥ 17 are realized by a recursive construction from cones, disjoint unions and a family of graphs that we call near-cones, starting from seven small graphs; it produces a graph with <i>c</i>(<i>G</i>) = <i>k</i> in time polynomial in log <i>k</i>. The question arose from a problem of Ordoñez in continuum theory, through a reduction by Camargo, Ordoñez and Ramírez, who found the values up to 255 by a computer search. The proof is formalized in Lean 4. We also observe that a theorem of Czabarka, Székely and Wagner on subtrees reduces the corresponding problem for the number of all connected subgraphs to a finite computation, and we report its outcome. We did not find these results in the literature, but we make no claim of novelty or priority.</p><p><b>Supplementary material.</b> LaTeX source; a Lean 4 / Mathlib formalization (Lean 4.35.0, Mathlib commit 6015dbb, library ConnectedSets) of the results of Sections 2–6 and Lemma 7.2, using only Lean's standard axioms and checked with leanchecker and the external type checker nanoda; programs (Python and C) and their outputs.</p><p><b>Status.</b> Preprint; not yet peer reviewed, and no independent expert has yet verified the proofs. The main model used to solve the problem and prove the theorems was Claude Opus 5.5 (Anthropic); ChatGPT-Astra (OpenAI) was used with the author to read the manuscript and check the arguments. See AI_DISCLOSURE.md.</p>",
+  "creators": [
+    {
+      "name": "Alves de Almeida, Lucas",
+      "affiliation": "Independent researcher"
+    }
+  ],
+  "keywords": [
+    "connected induced subgraph",
+    "connected set",
+    "inverse problem",
+    "graph invariant",
+    "subtrees",
+    "near-cone",
+    "Lean 4",
+    "formalization"
+  ],
+  "license": "cc-by-4.0",
+  "access_right": "open",
+  "language": "eng",
+  "version": "1.0",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/LucasAlves8Sp/ALL-FINITE-CARDINALITIES-OF-THE-HYPERSPACE-OF-REGULAR-SUBCONTINUA",
+      "relation": "references",
+      "resource_type": "software"
+    }
+  ],
+  "notes": "Not yet independently peer reviewed. Mathematics Subject Classification 2020: Primary 05C30; Secondary 05C40, 54B20, 68V20."
+}
